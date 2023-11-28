@@ -36,7 +36,9 @@ class PublisherManager extends AbstractManager {
 
   async readAll() {
     // Execute the SQL SELECT query to retrieve all publishers from the "publisher" table
-    const [rows] = await this.database.query(`select * from ${this.table}`);
+    const [rows] = await this.database.query(
+      `select * from ${this.table} as p inner join image as i on i.id = p.logo_id`
+    );
 
     // Return the array of publishers
     return rows;

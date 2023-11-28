@@ -17,7 +17,7 @@
   {
     "id": 3,
     "label": "Logo",
-    "key": "logo",
+    "key": "src",
     "html": "img"
   }
 ]
