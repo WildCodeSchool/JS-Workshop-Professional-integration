@@ -3,10 +3,34 @@
 /* ************************************************************************* */
 
 // Import the manager modules responsible for handling data operations on the tables
-const ItemManager = require("./models/ItemManager");
+
+const ArticleManager = require("./models/ArticleManager");
+
+const AuthorManager = require("./models/AuthorManager");
+
+const ImageManager = require("./models/ImageManager");
+
+const PublisherManager = require("./models/PublisherManager");
+
+const ImageByArticleManager = require("./models/ImageByArticleManager");
+
+const CategoryManager = require("./models/CategoryManager");
+
+const CategoryByArticleManager = require("./models/CategoryByArticleManager");
+
+const UserManager = require("./models/UserManager");
 
 const managers = [
-  ItemManager,
+  UserManager,
+  CategoryByArticleManager,
+  CategoryManager,
+  ImageByArticleManager,
+  ArticleManager,
+  PublisherManager,
+  AuthorManager,
+  ImageManager,
+  AuthorManager,
+  ArticleManager,
   // Add other managers here
 ];
 
