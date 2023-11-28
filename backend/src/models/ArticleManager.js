@@ -37,7 +37,14 @@ class ArticleManager extends AbstractManager {
 
   async readAll() {
     // Execute the SQL SELECT query to retrieve all articles from the "article" table
-    const [rows] = await this.database.query(`select * from ${this.table}`);
+    const [rows] = await this.database
+      .query(`select ar.id as id, ar.title, ar.subtitle, CONCAT(au.firstname,' ',au.lastname) as author, pu.name as publisher, i.src, i.alt, i.id as image_id from ${this.table} as ar
+         inner join author as au on au.id = ar.author_id
+         inner join publisher as pu on pu.id = ar.publisher_id
+         inner join image_by_article as iba on iba.article_id = ar.id
+         inner join image as i on i.id = iba.image_id where i.main = 1
+         order by ar.id
+      `);
 
     // Return the array of articles
     return rows;
