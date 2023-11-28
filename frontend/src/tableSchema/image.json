@@ -1,0 +1,23 @@
+[
+  {
+    "id": 0,
+    "label": "Id",
+    "key": "id"
+  },
+  {
+    "id": 1,
+    "label": "src",
+    "key": "src",
+    "html": "img"
+  },
+  {
+    "id": 2,
+    "label": "src",
+    "key": "src"
+  },
+  {
+    "id": 3,
+    "label": "alt",
+    "key": "alt"
+  }
+]

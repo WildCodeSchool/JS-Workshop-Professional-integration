@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { GrEdit, GrTrash } from "react-icons/gr";
 
+import "./AdminTable.css";
+
 function AdminTable({ data, model, removeElement }) {
   const getHTMLFromKey = (field, schema) => {
     if (schema.html === "img") {
