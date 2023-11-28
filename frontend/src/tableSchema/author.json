@@ -1,0 +1,27 @@
+[
+  {
+    "id": 0,
+    "label": "Id",
+    "key": "id"
+  },
+  {
+    "id": 1,
+    "label": "Firstname",
+    "key": "firstname"
+  },
+  {
+    "id": 2,
+    "label": "Lastname",
+    "key": "lastname"
+  },
+  {
+    "id": 3,
+    "label": "Avatar",
+    "key": "avatar_id"
+  },
+  {
+    "id": 4,
+    "label": "Job Title",
+    "key": "job_title"
+  }
+]

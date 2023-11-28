@@ -1,0 +1,33 @@
+[
+  {
+    "id": 0,
+    "label": "Id",
+    "key": "id"
+  },
+  {
+    "id": 1,
+    "label": "Title",
+    "key": "title"
+  },
+  {
+    "id": 2,
+    "label": "SubTitle",
+    "key": "subtitle"
+  },
+  {
+    "id": 3,
+    "label": "Main Image",
+    "key": "src",
+    "html": "img"
+  },
+  {
+    "id": 4,
+    "label": "Author",
+    "key": "author"
+  },
+  {
+    "id": 5,
+    "label": "Publisher",
+    "key": "publisher"
+  }
+]
