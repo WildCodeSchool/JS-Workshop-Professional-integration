@@ -122,8 +122,8 @@ const seed = async () => {
             faker.image.urlLoremFlickr({
               category: "technics",
             }),
-            faker.lorem.words(),
-            i % 5 === 0,
+            `${faker.lorem.words()} article`,
+            (i + 69) % 5 === 0,
             faker.number.float({ min: 1, max: 10, precision: 0.001 }),
           ]
         )
@@ -135,7 +135,7 @@ const seed = async () => {
       queries.push(
         database.query(
           "insert into image_by_article(image_id, article_id) values (?, ?)",
-          [i + 1, Math.floor(i / 5) + 1]
+          [i + 71, Math.floor(i / 5) + 1]
         )
       );
     }
