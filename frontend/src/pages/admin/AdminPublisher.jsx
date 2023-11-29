@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import connexion from "../../services/connexion";
 
 import tableModel from "../../tableSchema/publisher.json";
-import AdminTable from "../../components/AdminTable";
+import AdminTable from "../../components/admin/AdminTable";
 
 function AdminPublisher() {
   const [publishers, setPublishers] = useState([]);

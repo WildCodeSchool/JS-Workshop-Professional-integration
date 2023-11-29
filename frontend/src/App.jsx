@@ -1,4 +1,3 @@
-import Counter from "./components/Counter";
 import logo from "./assets/logo.svg";
 
 import "./App.css";
@@ -9,8 +8,6 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>Hello Vite + React !</p>
-
-        <Counter />
 
         <p>
           Edit <code>App.jsx</code> and save to test HMR updates.

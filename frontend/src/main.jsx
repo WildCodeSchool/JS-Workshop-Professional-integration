@@ -11,10 +11,7 @@ import AdminUser from "./pages/admin/AdminUser";
 import Administration from "./pages/layout/Administration";
 import AdminImage from "./pages/admin/AdminImage";
 import Dashboard from "./pages/admin/Dashboard";
-import AdminOneArticles from "./pages/admin/AdminOneArticles";
-import AdminOneAuthor from "./pages/admin/AdminOneAuthor";
-import AdminOnePublisher from "./pages/admin/AdminOnePublisher";
-import AdminOneImage from "./pages/admin/AdminOneImage";
+import AdminOne from "./pages/admin/AdminOne";
 
 const router = createBrowserRouter([
   {
@@ -35,7 +32,7 @@ const router = createBrowserRouter([
       },
       {
         path: "articles/:id",
-        element: <AdminOneArticles />,
+        element: <AdminOne />,
       },
       {
         path: "authors",
@@ -43,7 +40,7 @@ const router = createBrowserRouter([
       },
       {
         path: "authors/:id",
-        element: <AdminOneAuthor />,
+        element: <AdminOne />,
       },
       {
         path: "publishers",
@@ -51,7 +48,7 @@ const router = createBrowserRouter([
       },
       {
         path: "publishers/:id",
-        element: <AdminOnePublisher />,
+        element: <AdminOne />,
       },
       {
         path: "images",
@@ -59,7 +56,7 @@ const router = createBrowserRouter([
       },
       {
         path: "images/:id",
-        element: <AdminOneImage />,
+        element: <AdminOne />,
       },
       {
         path: "users",

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import connexion from "../../services/connexion";
 
-import AdminTable from "../../components/AdminTable";
+import AdminTable from "../../components/admin/AdminTable";
 import tableModel from "../../tableSchema/author.json";
 
 function AdminAuthor() {
