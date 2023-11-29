@@ -9,7 +9,10 @@ function Administration() {
   return (
     <div className="adminContainer">
       <AdminNav />
-      <Outlet />
+      <div className="container">
+        <h1>Role : Admin</h1>
+        <Outlet />
+      </div>
     </div>
   );
 }

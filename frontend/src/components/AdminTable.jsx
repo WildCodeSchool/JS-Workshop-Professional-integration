@@ -19,21 +19,29 @@ function AdminTable({ data, model, removeElement }) {
         {model.map((row) => (
           <th key={row.id}>{row.label}</th>
         ))}
+        <th aria-label="Modifier" />
+        <th aria-label="Supprimer" />
       </thead>
       <tbody>
         {data.map((el) => {
           return (
             <tr key={el.id}>
-              {model.map((row) => (
-                <td key={row.id}>{getHTMLFromKey(el, row)}</td>
+              {model.map((row, i) => (
+                <td key={row.id} className={i === 0 ? "idcenter" : ""}>
+                  {getHTMLFromKey(el, row)}
+                </td>
               ))}
-              <td>
-                <Link to={`${el.id}`}>
-                  <GrEdit />
-                </Link>
-              </td>
-              <td aria-label="delete" onClick={() => removeElement(el.id)}>
-                <GrTrash />
+
+              <td colSpan="2">
+                <div className="adminAction">
+                  <Link to={`${el.id}`}>
+                    <GrEdit />
+                  </Link>
+                  <GrTrash
+                    aria-label="delete"
+                    onClick={() => removeElement(el.id)}
+                  />
+                </div>
               </td>
             </tr>
           );

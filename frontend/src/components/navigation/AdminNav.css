@@ -1,7 +1,35 @@
 .adminNavContainer {
   width: 10rem;
+  border-right: 2px solid darkgray;
+  -webkit-box-shadow: 10px 0px 5px 0px rgba(169, 169, 169, 0.75);
+  -moz-box-shadow: 10px 0px 5px 0px rgba(169, 169, 169, 0.75);
+  box-shadow: 10px 0px 5px 0px rgba(169, 169, 169, 0.75);
+}
+
+.adminNavContainer nav {
   display: flex;
   flex-direction: column;
-  background-color: aqua;
-  height: 100%;
+  margin-top: 5rem;
+}
+
+.adminNavContainer a {
+  margin: 0.5rem;
+  color: black;
+  text-decoration: none;
+}
+
+.adminNavContainer a:hover,
+.adminNavContainer button:hover {
+  text-decoration: underline;
+}
+
+.adminNavContainer section {
+  position: fixed;
+  bottom: 0.5rem;
+}
+
+.adminNavContainer section button {
+  background-color: transparent;
+  border: none;
+  font-size: 1.2rem;
 }
