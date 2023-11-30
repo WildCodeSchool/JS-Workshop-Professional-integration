@@ -1,13 +1,24 @@
-table {
+.tableContainer {
+  height: 80vh;
+  overflow: auto;
   border: 1px solid black;
-  border-spacing: 0;
-  width: 98%;
-  margin: auto;
   border-radius: 0.5rem;
-  padding: 0 0.2rem;
-  box-shadow: 1px 1px 5px 5px rgba(225, 225, 225, 0.75);
-  -webkit-box-shadow: 1px 1px 5px 5px rgba(225, 225, 225, 0.75);
-  -moz-box-shadow: 1px 1px 5px 5px rgba(225, 225, 225, 0.75);
+  margin: 0 0.5rem;
+  scrollbar-color: red orange;
+  scrollbar-width: thin;
+}
+
+table {
+  border-spacing: 0;
+  margin: auto;
+  width: 100%;
+}
+
+thead {
+  position: sticky;
+  top: 0;
+  border-radius: 0.5rem;
+  background-color: white;
 }
 
 thead th {

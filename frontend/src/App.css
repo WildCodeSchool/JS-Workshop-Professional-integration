@@ -28,3 +28,29 @@ main h2 {
   margin: 1rem;
   padding: 1rem;
 }
+
+.adminShadow {
+  box-shadow: 1px 1px 5px 5px rgba(225, 225, 225, 0.75);
+  -webkit-box-shadow: 1px 1px 5px 5px rgba(225, 225, 225, 0.75);
+  -moz-box-shadow: 1px 1px 5px 5px rgba(225, 225, 225, 0.75);
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+  border: 1px solid black;
+  border-radius: 1rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: black;
+  border-radius: 10px;
+}

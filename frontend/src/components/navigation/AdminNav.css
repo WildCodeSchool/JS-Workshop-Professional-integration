@@ -1,4 +1,6 @@
 .adminNavContainer {
+  height: 100vh;
+  position: sticky;
   width: 10rem;
   border-right: 2px solid darkgray;
   -webkit-box-shadow: 10px 0px 5px 0px rgba(169, 169, 169, 0.75);

@@ -14,40 +14,42 @@ function AdminTable({ data, model, removeElement }) {
   };
 
   return (
-    <table>
-      <thead>
-        {model.map((row) => (
-          <th key={row.id}>{row.label}</th>
-        ))}
-        <th aria-label="Modifier" />
-        <th aria-label="Supprimer" />
-      </thead>
-      <tbody>
-        {data.map((el) => {
-          return (
-            <tr key={el.id}>
-              {model.map((row, i) => (
-                <td key={row.id} className={i === 0 ? "idcenter" : ""}>
-                  {getHTMLFromKey(el, row)}
-                </td>
-              ))}
+    <div className="tableContainer">
+      <table className="adminLayout adminShadow">
+        <thead>
+          {model.map((row) => (
+            <th key={row.id}>{row.label}</th>
+          ))}
+          <th aria-label="Modifier" />
+          <th aria-label="Supprimer" />
+        </thead>
+        <tbody>
+          {data.map((el) => {
+            return (
+              <tr key={el.id}>
+                {model.map((row, i) => (
+                  <td key={row.id} className={i === 0 ? "idcenter" : ""}>
+                    {getHTMLFromKey(el, row)}
+                  </td>
+                ))}
 
-              <td colSpan="2">
-                <div className="adminAction">
-                  <Link to={`${el.id}`}>
-                    <GrEdit />
-                  </Link>
-                  <GrTrash
-                    aria-label="delete"
-                    onClick={() => removeElement(el.id)}
-                  />
-                </div>
-              </td>
-            </tr>
-          );
-        })}
-      </tbody>
-    </table>
+                <td colSpan="2">
+                  <div className="adminAction">
+                    <Link to={`${el.id}`}>
+                      <GrEdit />
+                    </Link>
+                    <GrTrash
+                      aria-label="delete"
+                      onClick={() => removeElement(el.id)}
+                    />
+                  </div>
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
   );
 }
 
