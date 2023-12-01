@@ -54,7 +54,7 @@ router.get("/publishers", publisherControllers.browse);
 router.get("/publishers/:id", publisherControllers.read);
 // router.post("/publishers", publisherValidation, publisherControllers.add);
 // router.put("/publishers/:id", publisherValidation, publisherControllers.edit);
-// router.delete("/publishers/:id", publisherControllers.destroy);
+router.delete("/publishers/:id", publisherControllers.destroy);
 
 const authorControllers = require("./controllers/authorControllers");
 // const authorValidation = require("./validators/authorValidation");
@@ -72,7 +72,7 @@ router.get("/images", imageControllers.browse);
 router.get("/images/:id", imageControllers.read);
 // router.post("/images", imageValidation, imageControllers.add);
 // router.put("/images/:id", imageValidation, imageControllers.edit);
-// router.delete("/images/:id", imageControllers.destroy);
+router.delete("/images/:id", imageControllers.destroy);
 
 /* ************************************************************************* */
 

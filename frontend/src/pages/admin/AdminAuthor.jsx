@@ -1,30 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
-import connexion from "../../services/connexion";
+import useAuthorsModel from "../../data/author/AuthorModel";
 
 import AdminTable from "../../components/admin/AdminTable";
 import tableModel from "../../tableSchema/author.json";
 
 function AdminAuthor() {
-  const [authors, setAuthors] = useState([]);
-
-  const getAuthors = async () => {
-    try {
-      const myAuthors = await connexion.get("/authors");
-      setAuthors(myAuthors.data);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  const removeAuthors = async (id) => {
-    try {
-      await connexion.delete(`/authors/${id}`);
-      setAuthors((prev) => prev.filter((el) => el.id !== id));
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  const { getAuthors, authors, removeAuthor } = useAuthorsModel();
 
   useEffect(() => {
     getAuthors();
@@ -36,7 +18,7 @@ function AdminAuthor() {
       <AdminTable
         data={authors}
         model={tableModel}
-        removeElement={removeAuthors}
+        removeElement={removeAuthor}
       />
     </main>
   );

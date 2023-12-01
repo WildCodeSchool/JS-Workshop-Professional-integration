@@ -28,3 +28,8 @@
   border: none;
   border-bottom: 1px solid lightgray;
 }
+
+.selectRow {
+  display: flex;
+  justify-content: space-around;
+}

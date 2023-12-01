@@ -1,30 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
-import connexion from "../../services/connexion";
+import useImagesModel from "../../data/image/ImageModel";
 
 import AdminTable from "../../components/admin/AdminTable";
 import tableModel from "../../tableSchema/image.json";
 
 function AdminImage() {
-  const [images, setImages] = useState([]);
-
-  const getImages = async () => {
-    try {
-      const myImages = await connexion.get("/images");
-      setImages(myImages.data);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  const removeImages = async (id) => {
-    try {
-      await connexion.delete(`/images/${id}`);
-      setImages((prev) => prev.filter((el) => el.id !== id));
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  const { getImages, images, removeImage } = useImagesModel();
 
   useEffect(() => {
     getImages();
@@ -36,7 +18,7 @@ function AdminImage() {
       <AdminTable
         data={images}
         model={tableModel}
-        removeElement={removeImages}
+        removeElement={removeImage}
       />
     </main>
   );

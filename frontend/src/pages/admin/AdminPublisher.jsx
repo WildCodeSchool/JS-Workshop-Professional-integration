@@ -1,30 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
-import connexion from "../../services/connexion";
+import usePublishersModel from "../../data/publisher/PublisherModel";
 
 import tableModel from "../../tableSchema/publisher.json";
 import AdminTable from "../../components/admin/AdminTable";
 
 function AdminPublisher() {
-  const [publishers, setPublishers] = useState([]);
-
-  const getPublishers = async () => {
-    try {
-      const myPublishers = await connexion.get("/publishers");
-      setPublishers(myPublishers.data);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  const removePublisher = async (id) => {
-    try {
-      await connexion.delete(`/publishers/${id}`);
-      setPublishers((prev) => prev.filter((el) => el.id !== id));
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  const { getPublishers, publishers, removePublisher } = usePublishersModel();
 
   useEffect(() => {
     getPublishers();
