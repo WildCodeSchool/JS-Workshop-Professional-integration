@@ -68,8 +68,18 @@ class AuthorManager extends AbstractManager {
   async update(author, id) {
     // Execute the SQL INSERT query to update the row with tie id on the "author" table
     const result = await this.database.query(
-      `update ${this.table} set ? where id = ?`,
-      [author, id]
+      `update ${this.table} set firstname = ?, lastname = ?, description = ?, job_title = ?, website = ?, facebook = ?, linkedIn = ?, birthday = ? where id = ?`,
+      [
+        author.firstname,
+        author.lastname,
+        author.description,
+        author.job_title,
+        author.website,
+        author.facebook,
+        author.linkedIn,
+        author.birthday,
+        id,
+      ]
     );
 
     return result;

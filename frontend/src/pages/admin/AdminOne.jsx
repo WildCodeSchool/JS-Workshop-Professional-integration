@@ -1,36 +1,22 @@
-import React, { useState, useEffect } from "react";
-import { useParams, useLocation } from "react-router-dom";
+import React from "react";
+import { useLocation } from "react-router-dom";
 
-import connexion from "../../services/connexion";
 import FormArticle from "../../components/admin/FormArticle";
 import FormAuthor from "../../components/admin/FormAuthor";
 import FormImage from "../../components/admin/FormImage";
 import FormPublisher from "../../components/admin/FormPublisher";
 
+import "./AdminOne.css";
+
 function AdminOne() {
-  const [data, setData] = useState();
-  const { id } = useParams();
   const type = useLocation().pathname.split("/")[2];
-
-  const getData = async () => {
-    try {
-      const myData = await connexion.get(`/${type}/${id}`);
-      setData(myData.data);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  useEffect(() => {
-    getData();
-  }, []);
 
   const getForm = () => {
     const adminForm = {
-      articles: <FormArticle article={data} />,
-      authors: <FormAuthor author={data} />,
-      publisher: <FormPublisher publisher={data} />,
-      images: <FormImage image={data} />,
+      articles: <FormArticle />,
+      authors: <FormAuthor />,
+      publisher: <FormPublisher />,
+      images: <FormImage />,
     };
     return adminForm[type];
   };

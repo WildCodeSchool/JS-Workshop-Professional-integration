@@ -39,8 +39,8 @@ class ArticleManager extends AbstractManager {
     // Execute the SQL SELECT query to retrieve all articles from the "article" table
     const [rows] = await this.database
       .query(`select ar.id as id, ar.title, ar.subtitle, CONCAT(au.firstname,' ',au.lastname) as author, pu.name as publisher, i.src, i.alt, i.id as image_id from ${this.table} as ar
-         inner join author as au on au.id = ar.author_id
-         inner join publisher as pu on pu.id = ar.publisher_id
+         inner join author as au on au.id = ar.authors_id
+         inner join publisher as pu on pu.id = ar.publishers_id
          inner join image_by_article as iba on iba.article_id = ar.id
          inner join image as i on i.id = iba.image_id where i.main = 1
          order by ar.id
@@ -56,8 +56,15 @@ class ArticleManager extends AbstractManager {
   async update(article, id) {
     // Execute the SQL INSERT query to update the row with tie id on the "article" table
     const result = await this.database.query(
-      `update ${this.table} set ? where id = ?`,
-      [article, id]
+      `update ${this.table} set title = ?, subtitle = ?, content = ?, authors_id = ?, publishers_id = ? where id = ?`,
+      [
+        article.title,
+        article.subtitle,
+        article.content,
+        article.authors_id,
+        article.publishers_id,
+        id,
+      ]
     );
 
     return result;

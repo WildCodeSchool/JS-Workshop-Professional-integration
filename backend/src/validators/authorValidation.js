@@ -6,12 +6,14 @@ const getSchema = (req) => {
     firstname: Joi.string().max(255).presence(option),
     lastname: Joi.string().max(255).presence(option),
     job_title: Joi.string().max(255).presence(option),
-    website: Joi.string().max(255).presence(option),
-    facebook: Joi.string().max(255).presence(option),
-    linkedIn: Joi.string().max(255).presence(option),
+    website: Joi.string().max(255).allow(null).presence("optional"),
+    facebook: Joi.string().max(255).allow(null).presence("optional"),
+    linkedIn: Joi.string().max(255).allow(null).presence("optional"),
     avatar_id: Joi.number().presence("optional"),
     description: Joi.string().presence(option),
     birthday: Joi.date().presence("optional"),
+    id: Joi.number().presence("optional"),
+    created_at: Joi.date().presence("optional"),
   });
 };
 

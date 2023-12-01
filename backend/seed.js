@@ -104,7 +104,7 @@ const seed = async () => {
     for (let i = 0; i < 250; i += 1) {
       queriesArticles.push(
         database.query(
-          "insert into article(title, subtitle, content, author_id, publisher_id) values (?, ?, ?, ?, ?)",
+          "insert into article(title, subtitle, content, authors_id, publishers_id) values (?, ?, ?, ?, ?)",
           [
             faker.lorem.words({ min: 4, max: 8 }),
             faker.lorem.lines({ min: 1, max: 3 }),

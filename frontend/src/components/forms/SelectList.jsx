@@ -5,7 +5,7 @@ import connexion from "../../services/connexion";
 
 import "./SelectList.css";
 
-function SelectList({ title, labels }) {
+function SelectList({ title, labels, value, handleArticle, name }) {
   const [list, setList] = useState([]);
 
   const getList = async () => {
@@ -24,10 +24,10 @@ function SelectList({ title, labels }) {
   return (
     <label>
       {title}
-      <select name={title} id="">
+      <select name={name} value={value} onChange={(e) => handleArticle(e)}>
         <option value="">{title}</option>
         {list.map((l) => (
-          <option value={list.id} key={list.id}>
+          <option value={l.id} key={l.id}>
             {labels.map((label) => l[label]).join(" ")}
           </option>
         ))}
@@ -39,6 +39,9 @@ function SelectList({ title, labels }) {
 SelectList.propTypes = {
   title: PropTypes.string.isRequired,
   labels: PropTypes.arrayOf(PropTypes.string).isRequired,
+  value: PropTypes.string.isRequired,
+  handleArticle: PropTypes.func.isRequired,
+  name: PropTypes.string.isRequired,
 };
 
 export default SelectList;
